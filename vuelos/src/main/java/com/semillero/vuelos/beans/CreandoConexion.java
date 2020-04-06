@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 
 @Component
-public class CreandoConexio {
+public class CreandoConexion {
 
     @Bean(name = "beanCliente")
     pubic Cliente getUsuario(){
