@@ -57,6 +57,37 @@ insert into tikete (fecha,asiento,costo,idCliente,idVuelo) value
 ('2020-03-31', 10, 140,11,2),
 ('2020-03-31', 10, 150,12,2);
 
-create user 'usuario'@'localhost' identified by '12345';
-grant all privileges on * . * to 'root'@'localhost';
-flush privileges;
+select 
+cliente.nombre as Pasajero, 
+cliente.cedula as Cedula,
+tikete.fecha as Fecha,
+tikete.costo as Costo,
+vuelo.numeroVuelo, 
+vuelo.modeloAvion as Avion
+from tikete 
+inner join
+cliente on tikete.idCliente = cliente.idCliente
+inner join
+vuelo on tikete.idVuelo = vuelo.idVuelo;
+
+select 
+vuelo.numeroVuelo as Vuelo,
+cliente.nombre as Pasajero, 
+cliente.cedula as Cedula,
+tikete.fecha as Fecha
+from tikete 
+inner join
+cliente on tikete.idCliente = cliente.idCliente
+inner join
+vuelo on tikete.idVuelo = 2 and vuelo.idVuelo = 2;
+
+select 
+vuelo.numeroVuelo as Vuelo,
+cliente.nombre as Pasajero, 
+cliente.cedula as Cedula,
+tikete.fecha as Fecha
+from tikete 
+inner join
+cliente on tikete.idCliente = cliente.idCliente
+inner join
+vuelo on tikete.idVuelo = 1 and vuelo.idVuelo = 1;
