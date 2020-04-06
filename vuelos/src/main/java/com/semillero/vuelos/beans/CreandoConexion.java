@@ -9,7 +9,7 @@ public class CreandoConexio {
 
     @Bean(name = "beanCliente")
     pubic Cliente getUsuario(){
-        return new Usuario();
+        return new Cliente();
     }
 
     @Bean(name = "beanConexion")
@@ -24,7 +24,7 @@ public class CreandoConexio {
     public DataSource getDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/dbtaller");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/dbtaller?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         dataSource.setUsername("usuario");
         dataSource.setPassword("12345");
 
