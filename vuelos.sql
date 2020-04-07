@@ -39,23 +39,27 @@ insert into Cliente (nombre,cedula,telefono) values
  ('Alejandro Garcia', 665789, 310800127),
  ('Gustavo Gutierrez', 305811, 310800128);
   
- insert into  Vuelo (numeroVuelo,modeloAvion, capacidad) values
- ('AV10','Boeing 747', 400),
- ('AV20','Airbus A320', 200);
+ insert into  Vuelo (capacidad, modeloAvion, numero_vuelo) values
+ (400,'Boeing 747','AV10'),
+ (200,'Airbus A320','AV10');
  
-insert into tikete (fecha,asiento,costo,idCliente,idVuelo) value
-('2020-03-31', 10, 100,1,1),
-('2020-03-31', 11, 90,2,1),
-('2020-03-31', 12, 120,3,1),
-('2020-03-31', 13, 130,4,1),
-('2020-03-31', 14, 110,5,1),
-('2020-03-31', 15, 90,6,1),
-('2020-03-31', 10, 100,7,2),
-('2020-03-31', 10, 150,8,2),
-('2020-03-31', 10, 120,9,2),
-('2020-03-31', 10, 110,10,2),
-('2020-03-31', 10, 140,11,2),
-('2020-03-31', 10, 150,12,2);
+insert into tikete (fk_cliente,fk_vuelo) value
+('1','1'),
+('2','1'),
+('3','1'),
+('4','1'),
+('5','1'),
+('6','1'),
+('7','2'),
+('8','2'),
+('9','2'),
+('10','2'),
+('11','2'),
+('12','2');
+
+select * from cliente;
+select * from vuelo;
+
 
 select 
 cliente.nombre as Pasajero, 
