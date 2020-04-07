@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Semillero - Spring boot</title>
+</head>
+<body>
+ <h1><center>Vuelos</center></h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-5">
+            <h2>Registro Cliente</h2>
+        </div>
+        <div class="col-12">
+            <form thraction="@{/home/vuelos}" method="post" th:object="${post}">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="cedulaCliente">Cedula:</label><BR />
+                            <input id="cedulaCliente" type="text" required="required"/> <br /> <br />
+                        </div>
+                        <div class="col">
+                            <label for="nombreCliente">Nombre:</label><BR /> <input
+                                id="nombreCliente" type="text" required="required"/> <br /> <br />
+                        </div>
+                        <div class="col">
+                            <label for="telefonoCliente">Cedula:</label><BR /> <input
+                                id="telefonoCliente" type="number" required="required"/> <br /> <br />
+                        </div>
+                    </div>
+                </form>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
