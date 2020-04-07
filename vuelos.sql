@@ -25,6 +25,7 @@ alter table tikete add idVuelo int not null;
 alter table tikete add constraint fk_cltek foreign key (idCliente) references Cliente (idCliente);
 alter table tikete add constraint fk_vueltek foreign key (idVuelo) references Vuelo (idVuelo);
 
+
 insert into Cliente (nombre,cedula,telefono) values
  ('Carlos Perez', 245863, 310800113),
  ('Juan Torres', 215863, 310800112),
@@ -39,7 +40,7 @@ insert into Cliente (nombre,cedula,telefono) values
  ('Alejandro Garcia', 665789, 310800127),
  ('Gustavo Gutierrez', 305811, 310800128);
   
- insert into  Vuelo (capacidad, modeloAvion, numero_vuelo) values
+ insert into  Vuelo (capacidad, modelo_Avion, numero_vuelo) values
  (400,'Boeing 747','AV10'),
  (200,'Airbus A320','AV10');
  
@@ -59,6 +60,7 @@ insert into tikete (fk_cliente,fk_vuelo) value
 
 select * from cliente;
 select * from vuelo;
+select * from tikete;
 
 
 select 
