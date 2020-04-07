@@ -1,12 +1,20 @@
 package com.semillero.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import antlr.collections.List;
 
 @Entity
 public class Cliente {
@@ -26,6 +34,20 @@ public class Cliente {
 	
 	@Column
 	private int telefono;
+	
+	public Cliente(String nombre, int cedula, int telefono) {
+		this.nombre = nombre;
+		this.cedula = cedula;
+		this.telefono = telefono;
+	}
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+	        name = "tikete",
+	        joinColumns = @JoinColumn(name = "FK_Cliente", nullable = false),
+	        inverseJoinColumns = @JoinColumn(name="FK_Vuelo", nullable = false)
+	    )	
+	private Set<Vuelo> vuelos;
 
 	public int getIdCliente() {
 		return idCliente;
