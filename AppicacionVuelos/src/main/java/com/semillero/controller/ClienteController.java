@@ -1,58 +1,63 @@
 package com.semillero.controller;
 
-import javax.validation.Valid;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.semillero.entity.Cliente;
-import com.semillero.repository.ClienteRepository;
-import com.semillero.services.ClienteService;
+import com.semillero.services.ClienteServiceImpl;
 
-@Controller
+@RestController
+@RequestMapping("/Home")
 public class ClienteController {
-
-	@Autowired
-	private ClienteRepository repositorioCliente;
 	
 	@Autowired
-	private ClienteService clienteService;
+	private ClienteServiceImpl clienteServiceImpl;
 	
-	
-//	@GetMapping("/home")
-//	public String greeting(@RequestParam(name="name", required=false, defaultValue="Word") String name, Model model) {
-//		model.addAttribute("name",name);
-//		
-//		Cliente cliente = new Cliente();
-//		cliente.setIdCliente(13);
-//		cliente.setCedula(123456789);
-//		cliente.setNombre("Alfonso herrera");
-//		cliente.setTelefono(310222);
-//		repositorioCliente.save(cliente);
-//		
-//		return "registroClientes";
-//	}
-	
-	@PostMapping("/Registro")
-	public String createCliente(@Valid @ModelAttribute("clienteForm") Cliente cliente, ModelMap model) {
-		model.addAttribute("clienteForm", cliente);
-		return "registroClientes";
+	@GetMapping("/Pasajeros")
+	public List<Cliente> listaClientes(){
+		return clienteServiceImpl.listaClientes();
 	}
 
-	@GetMapping("/Clientes")
-	public String greeting( Model model) {
-		model.addAttribute("clientes",repositorioCliente.findAll());
-		return "listaClientes";
+	@PostMapping("/Pasajeros")
+	public Cliente registroCliente(@RequestBody Cliente cliente) {
+		return clienteServiceImpl.registroCliente(cliente);
 	}
 	
+	@GetMapping("/Pasajeros/{idCliente}")
+	public Cliente busvarId(@PathVariable(name = "idCliente") int idCliente){
+		Cliente cliente = new Cliente();
+		cliente = clienteServiceImpl.buscarId(idCliente);
+		System.out.println("El cliente es:"+ cliente);
+		return cliente;
+	}
 	
+	@PutMapping("/Pasajeros/{idCliente}")
+	public Cliente actualizarCliente(@PathVariable(name = "idCliente") int idCliente, @RequestBody Cliente cliente){
+		Cliente clienteSeleccionado = new Cliente();
+		Cliente clienteActualizado = new Cliente();
+		
+		clienteSeleccionado = clienteServiceImpl.buscarId(idCliente);
+		
+		clienteSeleccionado.setNombre(cliente.getNombre());
+		clienteSeleccionado.setCedula(cliente.getCedula());
+		clienteSeleccionado.setTelefono(cliente.getTelefono());
+		clienteActualizado = clienteServiceImpl.actualizarCliente(clienteSeleccionado);
+		
+		System.out.println("Actualizacion de cliente:" + clienteActualizado);
+		return clienteActualizado;
+	}
+	
+	@DeleteMapping("/Pasajeros/{idCliente}")
+	public void eliminarCliente(@PathVariable(name = "idCliente") int idCliente){
+		clienteServiceImpl.eliminarCliente(idCliente);
+	}
 }

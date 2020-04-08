@@ -33,14 +33,12 @@ public class Vuelo {
 
 	
 	public Vuelo(String numeroVuelo, String modeloAvion, int capacidad) {
-		this.modeloAvion = modeloAvion;
 		this.numeroVuelo = numeroVuelo;
+		this.modeloAvion = modeloAvion;
 		this.capacidad = capacidad;
 	}
 	
-	private void Vuelos() {
-		
-
+	public Vuelo() {
 	}
 	
 

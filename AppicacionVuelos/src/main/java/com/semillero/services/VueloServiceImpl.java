@@ -1,5 +1,7 @@
 package com.semillero.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,7 @@ public class VueloServiceImpl implements VueloServices {
 
 
 	@Override
-	public Iterable<Vuelo> getAllVuelo() {
-		
+	public List<Vuelo> listaVuelos() {
 		return repositorioVuelo.findAll();
 	}
 	
