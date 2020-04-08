@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Semillero - Spring boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Lista de Vuelos</h2>
+	<table>
+		<th:block th:each="v : ${vuelos}">
+			<tr>
+				<td th:text="${v.capacidad}"></td>
+				<td th:text="${cl.modelo_avion}"></td>
+				<td th:text="${cl.numero_vuelo}"></td>
+			</tr>
+		</th:block>
+	</table>
+</body>
+</html>

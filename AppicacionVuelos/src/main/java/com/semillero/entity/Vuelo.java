@@ -38,6 +38,11 @@ public class Vuelo {
 		this.capacidad = capacidad;
 	}
 	
+	private void Vuelos() {
+		
+
+	}
+	
 
 	public int getIdVuelo() {
 		return idVuelo;

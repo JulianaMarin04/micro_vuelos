@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Semillero - Spring boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 mt-5">
+				<h2>Registro Cliente</h2>
+			</div>
+			<div class="col-12">
+				<form class="form" role="form" th:object="${clienteForm}"
+					th:action="${/clienteForm}" method="post">
+					<div class="form-row">
+						<div class="col">
+							<label for="cedula">Cedula:</label><BR /> <input
+								class="form-control" type="text"
+								th:field="${clienteForm.cedula}" /> <br /> <br />
+						</div>
+						<div class="col">
+							<label for="nombre">Nombre:</label><BR /> <input
+								class="form-control" type="text" th:field="${clienteForm.cedula}" /> <br />
+							<br />
+						</div>
+						<div class="col">
+							<label for="telefono">Telefono:</label><BR /> <input
+								class= "form-control" type="number" th:field="${clienteForm.cedula}" /> <br /> <br />
+						</div>
+					</div>
+				</form>
+				<button type="submit" class="btn btn-primary">Registrarse</button>
+				</form>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -27,18 +27,23 @@ public class Cliente {
 	private int idCliente;
 	
 	@Column
-	private String nombre;
+	private int cedula;
 	
 	@Column
-	private int cedula;
+	private String nombre;
 	
 	@Column
 	private int telefono;
 	
-	public Cliente(String nombre, int cedula, int telefono) {
-		this.nombre = nombre;
+	public Cliente(int cedula, String nombre,  int telefono) {
+		
 		this.cedula = cedula;
+		this.nombre = nombre;
 		this.telefono = telefono;
+	}
+	
+	public Cliente() {
+		
 	}
 	
 	@ManyToMany(fetch = FetchType.LAZY)
