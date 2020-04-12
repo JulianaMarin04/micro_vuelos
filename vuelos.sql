@@ -66,15 +66,13 @@ select * from tikete;
 select 
 cliente.nombre as Pasajero, 
 cliente.cedula as Cedula,
-tikete.fecha as Fecha,
-tikete.costo as Costo,
-vuelo.numeroVuelo, 
-vuelo.modeloAvion as Avion
+vuelo.numero_vuelo, 
+vuelo.modelo_avion as Avion
 from tikete 
 inner join
-cliente on tikete.idCliente = cliente.idCliente
+cliente on tikete.fk_cliente = cliente.id_cliente
 inner join
-vuelo on tikete.idVuelo = vuelo.idVuelo;
+vuelo on tikete.fk_vuelo = vuelo.id_vuelo;
 
 select 
 vuelo.numeroVuelo as Vuelo,
