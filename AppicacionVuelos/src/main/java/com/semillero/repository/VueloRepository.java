@@ -12,7 +12,7 @@ import com.semillero.entity.Cliente;
 @Repository
 public interface VueloRepository extends JpaRepository<Vuelo, Integer> {
 	
-//	@Query ("select cliente.nombre as Pasajero, cliente.cedula as Cedula, vuelo.numero_vuelo, vuelo.modelo_avion as Avion from tikete inner join cliente on tikete.fk_cliente = cliente.id_clienteinner join vuelo on tikete.fk_vuelo = vuelo.id_vuelo")
+//	@Query (value="select cliente.id_cliente, cliente.nombre, cliente.cedula, cliente.telefono from tikete inner join cliente on tikete.fk_cliente = cliente.id_cliente inner join vuelo on tikete.fk_vuelo = vuelo.id_vuelo;", nativeQuery=true)
 //	public List<Cliente> findVueloPasajero(int idVuelo);
 
 }

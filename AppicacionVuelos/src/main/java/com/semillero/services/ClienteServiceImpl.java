@@ -38,7 +38,7 @@ public class ClienteServiceImpl implements ClienteService {
 	@Override
 	public void eliminarCliente(int idCliente) {
 		repositorioCliente.deleteById(idCliente);
-
 	}
+	
 
 }

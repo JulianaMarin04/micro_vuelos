@@ -30,6 +30,9 @@ public class Vuelo {
 	
 	@Column
 	private int capacidad;
+	
+	@ManyToMany(mappedBy="vuelos")
+	private Set<Cliente> clientes;
 
 	
 	public Vuelo(String numeroVuelo, String modeloAvion, int capacidad) {
@@ -74,12 +77,21 @@ public class Vuelo {
 		this.capacidad = capacidad;
 	}
 
+	public Set<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(Set<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 
 	@Override
 	public String toString() {
 		return "Vuelo [idVuelo=" + idVuelo + ", numeroVuelo=" + numeroVuelo + ", modeloAvion=" + modeloAvion
 				+ ", capacidad=" + capacidad + "]";
 	}
+	
+	
 	
 	
 }

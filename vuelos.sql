@@ -95,3 +95,15 @@ inner join
 cliente on tikete.idCliente = cliente.idCliente
 inner join
 vuelo on tikete.idVuelo = 1 and vuelo.idVuelo = 1;
+
+select cliente.id_cliente,
+cliente.nombre, 
+cliente.cedula,
+cliente.telefono
+from tikete 
+inner join 
+cliente on tikete.fk_cliente = cliente.id_cliente 
+inner join
+vuelo on tikete.fk_vuelo = vuelo.id_vuelo;
+
+

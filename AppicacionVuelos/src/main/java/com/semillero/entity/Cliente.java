@@ -19,7 +19,7 @@ import antlr.collections.List;
 @Entity
 public class Cliente {
 
-	private static final long serialVersionUID = -2969524610059270447L;
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator= "native")

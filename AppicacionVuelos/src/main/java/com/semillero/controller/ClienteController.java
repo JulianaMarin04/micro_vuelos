@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.semillero.entity.Cliente;
 import com.semillero.services.ClienteServiceImpl;
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Home")
 public class ClienteController {
