@@ -26,11 +26,4 @@ public class VueloController {
 		return vueloServiceImpl.listaVuelos();
 	}
 	
-
-	
-//	@GETMAPPING("/VUELOS/{IDVUELO}")
-//	PUBLIC LIST<CLIENTE> BUSVARID(@PATHVARIABLE(NAME = "IDVUELO") INT IDVUELO){
-//		RETURN VUELOSERVICEIMPL.FINDVUELOPASAJERO(IDVUELO);
-//	}
-	
 }

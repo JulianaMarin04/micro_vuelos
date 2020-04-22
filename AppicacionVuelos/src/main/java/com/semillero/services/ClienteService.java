@@ -16,4 +16,5 @@ public interface ClienteService {
 	
 	public void eliminarCliente(int cedula);
 	
+	public List<Cliente> buscarClienteVuelo(int idVuelo);
 }

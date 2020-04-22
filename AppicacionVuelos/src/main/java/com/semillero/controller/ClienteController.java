@@ -62,4 +62,9 @@ public class ClienteController {
 	public void eliminarCliente(@PathVariable(name = "idCliente") int idCliente){
 		clienteServiceImpl.eliminarCliente(idCliente);
 	}
+	
+	@GetMapping("/Pasajeros/Vuelos/{idVuelo}")
+	public List<Cliente> buscarClienteVuelo(@PathVariable(name = "idVuelo") int idVuelo){
+		return clienteServiceImpl.buscarClienteVuelo(idVuelo);
+	}
 }

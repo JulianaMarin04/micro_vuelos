@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Entity
@@ -90,7 +91,6 @@ public class Vuelo {
 		return "Vuelo [idVuelo=" + idVuelo + ", numeroVuelo=" + numeroVuelo + ", modeloAvion=" + modeloAvion
 				+ ", capacidad=" + capacidad + "]";
 	}
-	
 	
 	
 	

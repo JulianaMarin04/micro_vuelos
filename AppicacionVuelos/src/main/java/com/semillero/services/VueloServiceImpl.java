@@ -19,20 +19,5 @@ public class VueloServiceImpl implements VueloServices {
 	public List<Vuelo> listaVuelos() {
 		return repositorioVuelo.findAll();
 	}
-		
-	
-
-
-//	@Override
-//	public List<Cliente> findVueloPasajero(int idVuelo) {
-//		 List<Cliente> pasajerosxvuelos= repositorioVuelo.findVueloPasajero(idVuelo);
-//		 return pasajerosxvuelos;
-//	}
-
-
-	
-	
-
-	
 
 }

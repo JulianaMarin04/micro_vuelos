@@ -39,6 +39,13 @@ public class ClienteServiceImpl implements ClienteService {
 	public void eliminarCliente(int idCliente) {
 		repositorioCliente.deleteById(idCliente);
 	}
-	
 
+	@Override
+	public List<Cliente> buscarClienteVuelo(int idVuelo) {
+		if (idVuelo == 1) {
+			return repositorioCliente.buscarClienteVuelo1(idVuelo);
+		}
+		 return repositorioCliente.buscarClienteVuelo2(idVuelo);
+	}
+	
 }
