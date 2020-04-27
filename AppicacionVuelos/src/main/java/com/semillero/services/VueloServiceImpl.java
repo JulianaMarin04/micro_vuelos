@@ -23,7 +23,14 @@ public class VueloServiceImpl implements VueloServices {
 
 	@Override
 	public Vuelo show(int idVuelo) {
-		return repositorioVuelo.findById(idVuelo).get();
+		Vuelo vuelo = repositorioVuelo.findById(idVuelo).get();
+		return vuelo;
+	}
+
+
+	@Override
+	public Vuelo registroVuelo(Vuelo vuelo) {
+		return  repositorioVuelo.save(vuelo);
 	}
 
 }

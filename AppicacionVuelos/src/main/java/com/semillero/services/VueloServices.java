@@ -10,4 +10,6 @@ public interface VueloServices {
 	public List<Vuelo> listaVuelos();
 	
 	public Vuelo show(int idVuelo);
+	
+	public Vuelo registroVuelo(Vuelo vuelo);
 }

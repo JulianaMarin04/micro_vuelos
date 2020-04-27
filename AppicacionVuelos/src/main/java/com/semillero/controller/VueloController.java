@@ -32,11 +32,17 @@ public class VueloController {
 		return vueloServiceImpl.listaVuelos();
 	}
 	
-	@PostMapping("/Vuelos/{idVuelo}")
+	@PostMapping("/Vuelos")
+	public Vuelo registroVuelo(@RequestBody Vuelo vuelo) {
+		return vueloServiceImpl.registroVuelo(vuelo);
+	}
+		
+	@PostMapping("/Vuelos/{idVuelo}/Cliente")
 	public Cliente agregarClienteVuelo(@PathVariable(name = "idVuelo") int idVuelo, @RequestBody Cliente cliente) {
 		Vuelo vuelo = vueloServiceImpl.show(idVuelo);
 		clienteServiceImpl.registroCliente(cliente);
 		vuelo.getClientes().add(cliente);
+		vueloServiceImpl.registroVuelo(vuelo);
 		return cliente;
 		
 	}
