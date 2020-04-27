@@ -9,5 +9,5 @@ public interface VueloServices {
 
 	public List<Vuelo> listaVuelos();
 	
-	//public List<Cliente> findVueloPasajero(int idVuelo);
+	public Vuelo show(int idVuelo);
 }

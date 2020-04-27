@@ -20,4 +20,10 @@ public class VueloServiceImpl implements VueloServices {
 		return repositorioVuelo.findAll();
 	}
 
+
+	@Override
+	public Vuelo show(int idVuelo) {
+		return repositorioVuelo.findById(idVuelo).get();
+	}
+
 }

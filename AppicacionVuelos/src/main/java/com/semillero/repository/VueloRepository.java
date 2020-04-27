@@ -12,4 +12,5 @@ import com.semillero.entity.Cliente;
 @Repository
 public interface VueloRepository extends JpaRepository<Vuelo, Integer> {
 	
+	
 }
