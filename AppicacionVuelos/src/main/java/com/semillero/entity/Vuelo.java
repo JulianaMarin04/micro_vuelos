@@ -91,6 +91,49 @@ public class Vuelo {
 		return "Vuelo [idVuelo=" + idVuelo + ", numeroVuelo=" + numeroVuelo + ", modeloAvion=" + modeloAvion
 				+ ", capacidad=" + capacidad + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + capacidad;
+		result = prime * result + ((clientes == null) ? 0 : clientes.hashCode());
+		result = prime * result + idVuelo;
+		result = prime * result + ((modeloAvion == null) ? 0 : modeloAvion.hashCode());
+		result = prime * result + ((numeroVuelo == null) ? 0 : numeroVuelo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vuelo other = (Vuelo) obj;
+		if (capacidad != other.capacidad)
+			return false;
+		if (clientes == null) {
+			if (other.clientes != null)
+				return false;
+		} else if (!clientes.equals(other.clientes))
+			return false;
+		if (idVuelo != other.idVuelo)
+			return false;
+		if (modeloAvion == null) {
+			if (other.modeloAvion != null)
+				return false;
+		} else if (!modeloAvion.equals(other.modeloAvion))
+			return false;
+		if (numeroVuelo == null) {
+			if (other.numeroVuelo != null)
+				return false;
+		} else if (!numeroVuelo.equals(other.numeroVuelo))
+			return false;
+		return true;
+	}
 	
 	
 	

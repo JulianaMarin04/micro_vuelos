@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.semillero.entity.Cliente;
+import com.semillero.entity.Vuelo;
 import com.semillero.services.ClienteServiceImpl;
+import com.semillero.services.VueloServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -23,6 +25,9 @@ public class ClienteController {
 	
 	@Autowired
 	private ClienteServiceImpl clienteServiceImpl;
+	
+	@Autowired
+	private VueloServiceImpl vueloServiceImpl;
 	
 	@GetMapping("/Pasajeros")
 	public List<Cliente> listaClientes(){
